@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Visualization Entity CartoDB Bundle feature.
+ */
+
+include_once 'visualization_entity_cartodb_bundle.features.inc';

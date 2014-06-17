@@ -1,0 +1,15 @@
+name = Visualization Entity CartoDB Bundle
+core = 7.x
+package = NUDATA
+dependencies[] = ctools
+dependencies[] = eck
+dependencies[] = features
+dependencies[] = strongarm
+dependencies[] = text
+dependencies[] = visualization_entity
+features[ctools][] = strongarm:strongarm:1
+features[eck_bundle][] = visualization_cartodb_visualization
+features[features_api][] = api:2
+features[field_base][] = field_viz
+features[field_instance][] = visualization-cartodb_visualization-field_viz
+project path = sites/all/modules/nudata
