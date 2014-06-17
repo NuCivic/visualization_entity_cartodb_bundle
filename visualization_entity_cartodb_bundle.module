@@ -5,3 +5,41 @@
  */
 
 include_once 'visualization_entity_cartodb_bundle.features.inc';
+
+
+/**
+ * Implements hook_theme().
+ */
+function visualization_entity_cartodb_bundle_theme($existing, $type, $theme, $path) {
+  $tpls_path = drupal_get_path('module', 'visualization_entity_cartodb_bundle') . '/theme';
+  return array(
+    'visualization__cartodb_visualization' => array(
+      'render element' => 'elements',
+      'template' => 'visualization--cartodb-visualization',
+      'path' => $tpls_path,
+    ),
+  );
+}
+
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function visualization_entity_cartodb_bundle_entity_view_alter(&$build, $type) {
+  if ($type === 'visualization' && $build['#entity']->type === 'cartodb_visualization') {
+  	// Add cartodb css and js
+    drupal_add_css('http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css');
+    drupal_add_js('http://libs.cartocdn.com/cartodb.js/v3/cartodb.js');
+
+    // Build settings.
+    $settings = array();
+    $settings['viz_uuid'] = $build['field_viz']['#items'][0]['value'];
+    $settings['visualization_entity_cartodb_bundle'] = $settings;
+    drupal_add_js($settings, 'setting');
+    
+    // Build label column and geojson file.
+    $module_path = drupal_get_path('module', 'visualization_entity_cartodb_bundle');
+    drupal_add_js($module_path . '/visualization_entity_cartodb_bundle.js');
+    drupal_add_css($module_path . '/visualization_entity_cartodb_bundle.css');
+  }
+}

@@ -12,13 +12,13 @@ function visualization_entity_cartodb_bundle_field_default_field_instances() {
 
   // Exported field_instance: 'visualization-cartodb_visualization-field_viz'
   $field_instances['visualization-cartodb_visualization-field_viz'] = array(
-    'bundle' => 'cartodb',
+    'bundle' => 'cartodb_visualization',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
