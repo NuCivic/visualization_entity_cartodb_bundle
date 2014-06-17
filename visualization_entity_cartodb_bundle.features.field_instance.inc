@@ -10,8 +10,8 @@
 function visualization_entity_cartodb_bundle_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'visualization-cartodb_visualization-field_viz'
-  $field_instances['visualization-cartodb_visualization-field_viz'] = array(
+  // Exported field_instance: 'visualization-cartodb_visualization-field_viz_api_json_url'
+  $field_instances['visualization-cartodb_visualization-field_viz_api_json_url'] = array(
     'bundle' => 'cartodb_visualization',
     'default_value' => NULL,
     'deleted' => 0,
@@ -19,10 +19,10 @@ function visualization_entity_cartodb_bundle_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'link_default',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -32,27 +32,41 @@ function visualization_entity_cartodb_bundle_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'visualization',
-    'field_name' => 'field_viz',
-    'label' => 'vizualization uuid',
-    'required' => 0,
+    'field_name' => 'field_viz_api_json_url',
+    'label' => 'viz api json url',
+    'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
       'user_register_form' => FALSE,
+      'validate_url' => 1,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 3,
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 4,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('vizualization uuid');
+  t('viz api json url');
 
   return $field_instances;
 }

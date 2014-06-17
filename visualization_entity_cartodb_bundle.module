@@ -33,7 +33,7 @@ function visualization_entity_cartodb_bundle_entity_view_alter(&$build, $type) {
 
     // Build settings.
     $settings = array();
-    $settings['viz_uuid'] = $build['field_viz']['#items'][0]['value'];
+    $settings['viz_json'] = $build['field_viz_api_json_url']['#items'][0]['url'];
     $settings['visualization_entity_cartodb_bundle'] = $settings;
     drupal_add_js($settings, 'setting');
     
