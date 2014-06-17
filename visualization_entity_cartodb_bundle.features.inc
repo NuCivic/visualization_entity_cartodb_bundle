@@ -18,7 +18,7 @@ function visualization_entity_cartodb_bundle_ctools_plugin_api($module = NULL, $
  */
 function visualization_entity_cartodb_bundle_eck_bundle_info() {
   $items = array(
-    'visualization_cartodb' => array(
+    'visualization_cartodb_visualization' => array(
       'machine_name' => 'visualization_cartodb_visualization',
       'entity_type' => 'visualization',
       'name' => 'cartodb_visualization',
